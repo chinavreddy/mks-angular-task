@@ -1,0 +1,10 @@
+<ng-container *ngIf="sampleArticles.length > 0; else noArticle">
+  <app-article-card
+    *ngFor="let articles of sampleArticles; index as i"
+    [articles]="articles"
+  >
+  </app-article-card>
+</ng-container>
+<ng-template #noArticle>
+  <h1 class="text-center my-5">No Articles to show</h1>
+</ng-template>

@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+ul.header,
+footer {
+  background: black;
+}
+ul.header a,
+footer {
+  color: white;
+  font-weight: bold;
+}
+ul.header li:not(:first-child) {
+  box-shadow: -14px 0 0 -10px white;
+}
+.card img {
+  max-width: 200px;
+}
+.artical-banner {
+  max-height: 200px;
+  margin-left: -9.2%;
+  position: absolute;
+  top: 56px;
+}
+.article-body {
+  position: absolute;
+  top: 280px;
+}
+.card-block a {
+  color: #000000;
+  text-decoration: none;
+}
+.close-icon {
+  position: absolute;
+  right: 0;
+  font-size: 40px;
+  cursor: pointer;
+}

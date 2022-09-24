@@ -1,0 +1,81 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="row g-3 align-items-center">
+    <input type="hidden" formControlName="id"/>
+    <div class="col-4 offset-4">
+      <label for="title" class="col-form-label">Title:</label>
+      <input
+        type="text"
+        formControlName="title"
+        id="title"
+        class="form-control"
+        aria-describedby="title"
+      />
+      <div
+        class="text-danger"
+        *ngIf="profileForm.get('title')?.hasError('required') && profileForm.get('title')?.touched"
+      >
+        Title is required.
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="profileForm.get('title')?.hasError('pattern') && profileForm.get('title')?.touched"
+      >
+        Enter only letters.
+      </div>
+    </div>
+    <div class="col-4 offset-4">
+      <label for="author" class="col-form-label">Author:</label>
+
+      <input
+        type="text"
+        formControlName="author"
+        id="author"
+        class="form-control"
+        aria-describedby="author"
+      />
+    </div>
+    <div class="col-4 offset-4">
+      <label for="description" class="col-form-label">Description:</label>
+      <input
+        type="text"
+        formControlName="description"
+        id="description"
+        class="form-control"
+        aria-describedby="description"
+      />
+      <div
+        class="text-danger"
+        *ngIf="profileForm.get('description')?.hasError('required') && profileForm.get('description')?.touched"
+      >
+      Description is required.
+      </div>
+    </div>
+    <div class="col-4 offset-4">
+      <label for="thump_img" class="col-form-label">Thumbnail Image:</label>
+
+      <input
+        type="file"
+        formControlName="thump_img"
+        id="thump_img"
+        class="form-control"
+        aria-describedby="thump_img"
+        (change)="imgToBase64($event,'thump_img_url')"
+      />
+    </div>
+    <div class="col-4 offset-4">
+      <label for="poster_img" class="col-form-label">Poster Image:</label>
+
+      <input
+        type="file"
+        formControlName="poster_img"
+        id="poster_img"
+        class="form-control"
+        aria-describedby="poster_img"
+        (change)="imgToBase64($event,'poster_img_url')"
+      />
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <button type="submit" [disabled]="!profileForm.valid" class="btn btn-primary col-2">Submit</button>
+  </div>
+</form>

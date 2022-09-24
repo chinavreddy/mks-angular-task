@@ -1,0 +1,23 @@
+<div class="card">
+    <span aria-hidden="true" class="close-icon" (click)="removeArticle(articles?.id)">&times;</span>
+  <div class="row no-gutters">
+    <div class="col-auto">
+      <a routerLink="/view-article" [queryParams]="{ id: articles?.id }"
+        >
+      <img [src]="thump_img_new" class="img-fluid" alt=""
+      />
+      </a>
+    </div>
+    <div class="col">
+      <div class="card-block px-2">
+        <a routerLink="/view-article" [queryParams]="{ id: articles?.id }"
+        >
+        <h4 class="card-title">Id: {{ articles?.id }}</h4>
+        <h4 class="card-title">Title: {{ articles?.title }}</h4>
+        <h4 class="card-title">Author: {{ articles?.author }}</h4>
+        <h4 class="card-title">Description: {{ articles?.description }}</h4>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
