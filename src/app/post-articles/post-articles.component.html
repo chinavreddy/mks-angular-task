@@ -1,0 +1,36 @@
+<form (ngSubmit)="articlesForm.valid && onSubmit()" #articlesForm="ngForm" novalidate *ngIf="!postSucess">
+    <input type="hidden" name="id" [(ngModel)]="model.id"/>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Title*</span>
+        <input type="text" class="form-control"  [ngClass]="{ 'is-invalid': (title?.errors?.pattern || (title?.errors?.required && title?.touched)), 'is-valid':title.valid}" name="title" [(ngModel)]="model.title" #title="ngModel" pattern="^[a-zA-Z ]*$" required>
+        <div *ngIf="title?.touched && title?.errors?.required" [ngClass]="{'valid-feedback': title?.touched && title?.valid, 'invalid-feedback': title?.touched && title?.invalid}">Title is required</div>
+        <div *ngIf="title?.errors?.pattern" class="invalid-feedback">Oops! Allow only characters</div>       
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Author</span>
+        <input type="text" aria-label="Author" name="author" class="form-control" [(ngModel)]="model.author">
+    </div>
+    <div class="mb-3">
+        <label for="postDescription" class="form-label">Description*</label>
+        <textarea name="description" class="form-control" id="postDescription" rows="3" [ngClass]="{ 'is-invalid': (description?.errors?.pattern || (description?.errors?.required && description?.touched)), 'is-valid':description.valid}" [(ngModel)]="model.description" #description="ngModel" pattern="^[a-zA-Z0-9_ ]*$" required></textarea>
+        <div *ngIf="description?.touched && description?.errors?.required" [ngClass]="{'valid-feedback': description?.touched && description?.valid, 'invalid-feedback': description?.touched && description?.invalid}">Description is required</div>   
+        <div *ngIf="description?.errors?.pattern" class="invalid-feedback">Oops! Allow only characters</div>
+    </div>
+    <div class="mb-3">
+        <label for="thumbnailImage" class="form-label">Thumbnail Image</label>
+        <input class="form-control" type="file" id="thumbnailImage" name="thumbnail" value="" [(ngModel)]="model.thumbnail" (change)="handleUpload($event)">
+    </div>
+    <div class="mb-3">
+        <label for="largeImage" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="largeImage" name="largeImage" [(ngModel)]="model.largeImage" (change)="handleUploadLargeImage($event)">
+    </div>
+    
+    <input class="btn btn-primary" type="submit" value="Post" [disabled]="!articlesForm.valid">
+
+</form>
+
+<div *ngIf="postSucess" class="alert alert-success" role="alert">
+    Created Successfully
+</div>
+
+<a *ngIf="postSucess" class="btn btn-primary btn-lg" routerLinkActive="active" routerLink="/home">View Articles</a>

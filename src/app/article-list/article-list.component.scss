@@ -1,0 +1,15 @@
+::ng-deep .card {
+    margin-bottom: 25px;
+    img {
+        height: 250px;
+        object-fit: cover;
+    }
+    .btn-close {
+        position: absolute;
+        right: 5px;
+        background-color: #fff;
+        padding: 10px;
+        top: 5px;
+        border: 1px solid #ccc;
+    }
+}

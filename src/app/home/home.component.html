@@ -1,0 +1,12 @@
+<ng-container *ngIf="sampleArticles.length > 0; else noArticle">
+    <div class="container">
+        <div class="row">
+            <app-article-list class="col-md-4" *ngFor="let articles of sampleArticles; index as i" [articles]="articles">
+            </app-article-list>
+        </div>
+    </div>
+
+</ng-container>
+<ng-template #noArticle>
+    <h1 class="text-center my-5">No Articles to show</h1>
+</ng-template>

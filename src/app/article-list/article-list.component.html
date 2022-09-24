@@ -1,0 +1,10 @@
+<div class="card">
+    <img [src]="thump_img_new" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ articles?.title }}</h5>
+      <h6>{{ articles?.author }}</h6>
+      <p class="card-text">{{ articles?.description }}</p>
+      <a routerLink="/article-detail" [queryParams]="{ id: articles?.id }" class="btn btn-primary">Learn More</a>
+    </div>
+    <button type="button" class="btn-close" aria-hidden="true" (click)="removeArticle(articles?.id)"></button>
+</div>
