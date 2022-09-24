@@ -1,0 +1,47 @@
+<div class="container mb-8">
+    <h3>Add Article</h3>
+
+    <div class="d-flex justify-content-between alert alert-success alert-dismissible fade show" role="alert"
+        *ngIf="registeredSuccess">
+        <div>{{ registeredSuccess }}</div>
+        <div class="onHover" (click)="closeAlert()">&times;</div>
+    </div>
+
+    <form #articleForm="ngForm" (ngSubmit)="submit(articleForm); articleForm.resetForm()">
+        <div>
+            <label for="title">Title</label><br />
+            <input #title="ngModel" required minlength="2" maxlength="7" type="text" name="title" ngModel>
+            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert-msg">
+                <div *ngIf="title.errors?.required">Title Required</div>
+            </div>
+        </div>
+        <pre></pre>
+        <div>
+            <label for="author">Author</label><br />
+            <input type="text" #author="ngModel" required name="author" ngModel>
+            <div *ngIf="author.invalid && (author.dirty || author.touched)" class="alert-msg">
+                <div *ngIf="author.errors?.required">Author name Required</div>
+            </div>
+        </div>
+
+        <div>
+            <label for="author">Description</label>
+            <textarea #description="ngModel" required name="description" ngModel>
+            </textarea>
+            <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert-msg">
+                <div *ngIf="description.errors?.required">Description Required</div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="file">Thumbnail Image</label>
+            <input type="file" (change)="onThumbSelect($event)">
+        </div>
+        <div class="mb-3">
+            <label for="file">Poster Image</label>
+            <input type="file" (change)="onPosterSelect($event)">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="articleForm.invalid">Submit</button>
+    </form>
+</div>

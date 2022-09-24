@@ -1,0 +1,31 @@
+<section>
+    <div class="pb-3">
+        <div>
+            <img [src]='article!.thumb' onerror ="this.src = 'assets/img/no-image.jpg'" class="image-height">
+            <div class="col-md-8 p-4">
+                <div class="card-block">
+                    <div class="">
+                        <span>Title</span>:
+                        <p class="card-text">{{ article!.title }}</p>
+                    </div>
+                    <div class="">
+                        <span>Author</span>:
+                        <p class="card-text">{{ article!.author }}</p>
+                    </div>
+                    <div class="">
+                        <span>Description</span>:
+                        <p class="card-text">{{ article!.description }}</p>
+                    </div>        
+                </div>           
+            </div>
+        </div>
+    
+        <ng-template #elseBlock>
+            <div class="no-data">
+                Data Not Found
+            </div>
+        </ng-template>
+    </div>
+</section>
+<app-footer></app-footer>
+

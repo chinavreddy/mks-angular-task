@@ -1,0 +1,12 @@
+.nav {
+    padding:15px;
+    .article-link {
+        padding:5px;
+        background: #69a9e4;
+        margin:0 2px;
+        &.active{
+            background: #0b7baf;
+            color: #fff !important;
+        }
+    }
+}
