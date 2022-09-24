@@ -1,0 +1,40 @@
+.post-articles{
+    max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-row{
+    display: flex;
+}
+.alert{
+    padding: 2px;
+}
+.sr-only{
+    width: 250px;
+    float: left;
+    text-align: left;
+}
+.input-group{
+    width: 320px;
+    float:right;
+}
+
+@media only screen and (max-width: 769px) {
+    .sr-only{
+        width:200px;
+    }
+    .input-group{
+        width:250px;
+    }
+}
+
+@media only screen and (max-width: 569px) {
+    .sr-only{
+        max-width: 150px;
+        width:100%
+    }
+    .input-group{
+        max-width: 200px;
+        width:100%;
+    }
+}

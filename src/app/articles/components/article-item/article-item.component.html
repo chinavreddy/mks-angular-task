@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-10 list-group-item-section">
+        <div class="row col-md-12 col-sm-12 list-group-item">
+            <div class="col-md-3 thumbnail-image">
+                <img *ngIf="article.thumbnail_image" [src]="article.thumbnail_image" width="150">
+                <img *ngIf="!article.thumbnail_image" src="../../../../assets/img/default-thumbnail-image.jpg" width="150">
+            </div>
+            <div class="col-md-9 article-info">
+                <a (click)=onRemove(article) class="close-article">X</a>
+                <a class="nav-link" [routerLink]="['/articles/',article.id]"><h3 scope="row">{{article.title}}</h3></a>
+                <p>{{article.author}}</p>
+
+                <article>{{ article?.description | stringslice : 200 }}</article>
+            </div>
+        </div>
+    </div>
+</div>

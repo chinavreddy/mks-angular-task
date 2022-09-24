@@ -1,0 +1,30 @@
+a {
+    color: #008cba !important;
+}
+a:hover {
+    cursor: pointer;
+}
+.thumbnail-image{
+    float:left;
+}
+.article-info{
+    float:right;
+}
+.list-group-item{
+    display: flex;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+.close-article{
+    float: right;
+    background: #008cba;
+    color: #3a3939 !important;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 50%;
+}
+.thumbnail-image img{
+    border-radius: 10px;
+    box-shadow: 1px 2px 8px #ccc;
+}

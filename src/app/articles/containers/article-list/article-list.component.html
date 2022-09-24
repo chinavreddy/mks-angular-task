@@ -1,0 +1,16 @@
+<h3 class="text-center">Articles</h3>
+<div class="container">
+  <div class="row" id="articles">
+    <div *ngIf="!((articles)?.length)">
+      No articles, add one to get started.
+    </div>
+    
+    <div *ngIf="((articles)?.length)">
+        <article-item
+                *ngFor="let article of (articles) | reverse"
+                [article]="article"
+                (remove)="deleteArticle($event)"></article-item>
+    </div>
+  </div>
+
+
