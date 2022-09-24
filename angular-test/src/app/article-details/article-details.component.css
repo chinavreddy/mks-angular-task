@@ -1,0 +1,8 @@
+.no-data {
+    min-height: 500px;
+    text-align: center;
+    margin-top: 10%;
+}
+.custom-height {
+    max-height:500px;
+}

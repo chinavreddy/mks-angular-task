@@ -1,0 +1,16 @@
+<section>
+    <div class="container py-3">
+        <h3> Articles</h3>
+        <div class="col-12 mt-3 py-3" *ngIf="haveArticles ; else elseBlock">
+            <div *ngFor="let article of articles | reverse" class="pb-3"> 
+                <app-article-card [article] = "article"></app-article-card>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <div class="no-data">
+                No Articles to show
+            </div>
+        </ng-template>
+    </div>
+</section>
+<app-footer></app-footer>

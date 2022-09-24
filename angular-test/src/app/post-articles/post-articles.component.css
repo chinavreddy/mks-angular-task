@@ -1,0 +1,19 @@
+.article-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-group label{
+    margin-right: auto;
+}
+.in-valid {
+    border: red;
+}
+.disabled {
+    background: rgb(98, 100, 100);
+    color: #fff;
+    border: rgb(98, 100, 100);
+}
+.success-msg {
+    color: rgb(0, 128, 0);
+    font-size: 15px;
+}

@@ -1,0 +1,25 @@
+.card {
+    border: solid 1px #0d6efd;
+    border-radius: 8px;
+}
+.close {
+    height: 25px;
+    position: absolute;
+    width: 25px;
+    right: 4px;
+    border: solid 1px #0d6efd;
+    border-radius: 100%;
+    cursor: pointer;
+    background: #0d6efd;
+    color: #fff;
+    top: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+.card-text {
+    padding-left: 5px;
+}
+
+.card .row img {
+    border-radius: 8px;
+}

@@ -1,0 +1,67 @@
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-4 article-form">
+            <h3> Post Article</h3>
+            <form [formGroup]="articleForm" (ngSubmit)="onAddPost()" novalidate>
+                <div class="mb-3">
+                    <label for="name">Title</label>
+                    <input 
+                        formControlName="title"
+                        type="text" 
+                        class="form-control"
+                        [class.is-invalid] = "articleForm.controls['title'].invalid && articleForm.controls['title'].touched" requird="">
+                    <div *ngIf="articleForm.controls['title'].invalid && articleForm.controls['title'].touched">
+                        <small [class.d-none]="articleForm.controls['title'].value || articleForm.controls['title'].untouched" class="text-danger">
+                            Please Enter Title
+                        </small>
+                        <small *ngIf="articleForm.controls['title'].errors?.pattern" class="text-danger">
+                            Please Enter Charectors Only
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name">Author</label>
+                    <input 
+                        formControlName="author"
+                        type="text" 
+                        class="form-control">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="name">Description</label>
+                    <textarea 
+                        formControlName="description"
+                        id="description" 
+                        type="text" 
+                        class="form-control"
+                        [class.is-invalid] = "articleForm.controls['description'].invalid && articleForm.controls['description'].touched" requird="">
+                    </textarea>
+                    <small [class.d-none]="articleForm.controls['description'].value || articleForm.controls['description'].untouched" class="text-danger">
+                        Please Enter Description
+                    </small>
+                </div>
+                <div class="mb-3">
+                    <label for="file">Thumbnail Image</label>
+                    <input 
+                        formControlName="thumb"
+                        id="thumb" 
+                        type="file" 
+                        class="form-control"
+                        (change)="onThumbSelect($event)">
+                </div>
+                <div class="mb-3">
+                    <label for="file">Poster Image</label>
+                    <input 
+                        formControlName="poster"
+                        id="poster" 
+                        type="file" 
+                        class="form-control"
+                        (change)="onPosterSelect($event)">
+                </div>
+                <button class="btn btn-primary" type="submit" [class.disabled]="articleForm.invalid">Post</button>
+            </form>
+            <span class="success-msg">{{successMsg}}</span>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
