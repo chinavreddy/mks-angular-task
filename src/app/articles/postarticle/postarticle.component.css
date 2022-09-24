@@ -1,0 +1,10 @@
+.error-text{
+  color:red !important;
+}
+btn-primary:disabled {
+  background-color: grey !important;
+}
+.form-group.required .col-form-label:after {
+  content:"*";
+  color:red;
+}

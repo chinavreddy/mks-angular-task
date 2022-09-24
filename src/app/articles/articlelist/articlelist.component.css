@@ -1,0 +1,39 @@
+a {
+  color: #008cba !important;
+}
+.remove-article{
+  position: absolute;
+  right: 13px;
+  top: 10px;
+  z-index: 100;
+}
+.btn {
+  display:block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid red;
+
+}
+.card {
+border-radius:2.25rem;
+  padding:14px;
+}
+.rounded-corner {
+  border-radius:2.25rem;
+
+}
+.articles-list{
+  min-height: 500px;
+}
+.article-message{
+  width:200px;
+  line-height:500px;
+  text-align: center;
+
+}
+a.cursor-view {
+  cursor: pointer;
+  text-decoration: none;
+}
+
